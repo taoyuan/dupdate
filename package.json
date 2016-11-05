@@ -1,6 +1,6 @@
 {
   "name": "dupdate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Apply database updates to application based on semver file names.",
   "license": "MIT",
   "repository": "taoyuan/dupdate",
@@ -17,8 +17,10 @@
     "test": "nyc ava -s test/**/*.test.js"
   },
   "keywords": [
+    "app",
     "db",
     "database",
+    "version",
     "update",
     "updates",
     "migrate"
