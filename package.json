@@ -1,0 +1,46 @@
+{
+  "name": "db-updates",
+  "version": "0.1.0",
+  "description": "Apply database updates to application based on semver file names.",
+  "license": "MIT",
+  "repository": "taoyuan/db-updates",
+  "author": {
+    "name": "Yuan Tao",
+    "email": "towyuan@outlook.com",
+    "url": "github.com/taoyuan"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava -s test/**/*.test.js"
+  },
+  "keywords": [
+    "db",
+    "database",
+    "update",
+    "updates",
+    "migrate"
+  ],
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "inflect": "^0.3.0",
+    "lodash": "^4.16.6",
+    "semver": "^5.3.0"
+  },
+  "devDependencies": {
+    "ava": "avajs/ava",
+    "coveralls": "^2.11.14",
+    "nyc": "^8.4.0"
+  },
+  "xo": {
+    "esnext": true
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }
+}
