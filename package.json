@@ -1,9 +1,9 @@
 {
-  "name": "db-updates",
+  "name": "dupdate",
   "version": "0.1.0",
   "description": "Apply database updates to application based on semver file names.",
   "license": "MIT",
-  "repository": "taoyuan/db-updates",
+  "repository": "taoyuan/dupdate",
   "author": {
     "name": "Yuan Tao",
     "email": "towyuan@outlook.com",

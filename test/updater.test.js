@@ -1,13 +1,13 @@
 const test = require('ava');
 const path = require('path');
-const updates = require('..');
+const dupdate = require('..');
 
 test('should execute all updates', t => {
 	const expectedUpdated = ['0.0.1-updates', '0.0.2-updates', '0.0.3-updates'];
 
 	const checks = [];
 	const updated = [];
-	return updates({
+	return dupdate({
 		path: path.join(__dirname, 'fixtures', 'updates'),
 		isUpdated: file => checks.push(file) && false,
 		afterUpdate: (context, update) => updated.push(update.__file)
@@ -28,7 +28,7 @@ test('should skip updated updates', t => {
 	const context = {};
 	const checks = [];
 	const updated = [];
-	return updates({context,
+	return dupdate({context,
 		path: path.join(__dirname, 'fixtures', 'updates'),
 		isUpdated: file => checks.push(file) && (file === '0.0.2-updates'),
 		afterUpdate: (context, update) => updated.push(update.__file)

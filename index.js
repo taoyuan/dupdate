@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./lib/updates');
+module.exports = require('./lib/updater');

@@ -1,12 +1,12 @@
 "use strict";
 
 const path = require('path');
-const updates = require('..');
+const dupdate = require('..');
 
 const history = ['0.0.1-updates'];
 const updated = [];
 
-updates({
+dupdate({
 	path: path.join(__dirname, 'updates'),
 	isUpdated: file => history.includes(file),
 	afterUpdate: (context, update) => updated.push(update.__file)

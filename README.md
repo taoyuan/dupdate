@@ -1,4 +1,4 @@
-# db-updates [![Build Status](https://travis-ci.org/taoyuan/db-updates.svg?branch=master)](https://travis-ci.org/taoyuan/db-updates) [![Coverage Status](https://coveralls.io/repos/github/taoyuan/db-updates/badge.svg?branch=master)](https://coveralls.io/github/taoyuan/db-updates?branch=master)
+# dupdate [![Build Status](https://travis-ci.org/taoyuan/dupdate.svg?branch=master)](https://travis-ci.org/taoyuan/dupdate) [![Coverage Status](https://coveralls.io/repos/github/taoyuan/dupdate/badge.svg?branch=master)](https://coveralls.io/github/taoyuan/dupdate?branch=master)
 
 > Apply database updates to application based on semver file names.
 
@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save db-updates
+$ npm install --save dupdate
 ```
 
 ## Usage
@@ -15,19 +15,19 @@ $ npm install --save db-updates
 "use strict";
 
 const path = require('path');
-const Updates = require('db-updates').Updates;
+const dupdate = require('..');
 
 const history = ['0.0.1-updates'];
 const updated = [];
 
 
-const updates = new Updates({
+const updater = new dupdate.Updater({
 	path: path.join(__dirname, 'updates'),
 	isUpdated: file => history.includes(file),
 	afterUpdate: (context, update) => updated.push(update.__file)
 });
 
-updates.apply().then(result => {
+updater.apply().then(result => {
 	console.log('updates:', result.updates);
 	console.log('skips:', result.skips);
 	console.log('updated:', updated);
@@ -40,13 +40,9 @@ updates.apply().then(result => {
 
 ## API
 
-### new Updates(options)
+### `new dupdate.Updater(options)` or `dupdate(options)`
 
-create a Updates instance. Or create it just:
-
-```js
-require('db-update')({...});
-```
+create a Updater instance. 
 
 #### options
 
@@ -57,7 +53,7 @@ require('db-update')({...});
 * isUpdated: `function(file: string, [callback]) => [Promise]` - the function to check the update found whether has been applied.
 * afterUpdate: `function(context: object, update: function, [callback]) => [Promise]` the callback for one update script has been applied.
 
-### Updates.prototype.apply(callback) => \[Promise\]
+### `Updater.prototype.apply(callback) => [Promise]`
 
 Apply updates with callback function or return a Promise.
  
