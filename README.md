@@ -20,7 +20,6 @@ const dupdate = require('..');
 const history = ['0.0.1-updates'];
 const updated = [];
 
-
 const updater = new dupdate.Updater({
 	path: path.join(__dirname, 'updates'),
 	isUpdated: file => history.includes(file),
