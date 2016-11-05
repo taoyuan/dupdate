@@ -20,13 +20,14 @@ const Updates = require('db-updates').Updates;
 const history = ['0.0.1-updates'];
 const updated = [];
 
+
 const updates = new Updates({
 	path: path.join(__dirname, 'updates'),
 	isUpdated: file => history.includes(file),
 	afterUpdate: (context, update) => updated.push(update.__file)
 });
 
-updates.apply.then(result => {
+updates.apply().then(result => {
 	console.log('updates:', result.updates);
 	console.log('skips:', result.skips);
 	console.log('updated:', updated);
