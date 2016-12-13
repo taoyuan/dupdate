@@ -14,7 +14,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "nyc ava -s test/**/*.test.js"
+    "test": "nyc mocha test/**/*.test.js"
   },
   "keywords": [
     "app",
@@ -32,9 +32,11 @@
     "semver": "^5.3.0"
   },
   "devDependencies": {
-    "ava": "avajs/ava",
+    "chai": "^3.5.0",
     "coveralls": "^2.11.14",
-    "nyc": "^8.4.0"
+    "mocha": "^3.2.0",
+    "nyc": "^8.4.0",
+    "sinon": "^1.17.6"
   },
   "xo": {
     "esnext": true
