@@ -1,4 +1,4 @@
-# dupdate [![Build Status](https://travis-ci.org/taoyuan/dupdate.svg?branch=master)](https://travis-ci.org/taoyuan/dupdate) [![Coverage Status](https://coveralls.io/repos/github/taoyuan/dupdate/badge.svg?branch=master)](https://coveralls.io/github/taoyuan/dupdate?branch=master)
+# dupdate [![Build Status](https://travis-ci.org/taoyuan/dupdate.svg?branch=master)](https://travis-ci.org/taoyuan/dupdate) [![Coverage Status](https://coveralls.io/repos/github/taoyuan/dupdate/badge.svg?branch=master)](https://coveralls.io/github/taoyuan/dupdate?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/taoyuan/dupdate.svg)](https://greenkeeper.io/)
 
 > Apply database updates to application based on semver file names.
 
